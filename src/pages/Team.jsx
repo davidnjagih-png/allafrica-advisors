@@ -1,6 +1,7 @@
 // src/pages/Team.jsx
 import React from "react";
 import TeamCard from "../components/TeamCard";
+import "./../styles/Team.css";
 
 function Team() {
   const teamMembers = [
