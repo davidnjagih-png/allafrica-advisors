@@ -6,6 +6,7 @@
   width: 100%;
   max-width: 500px;
   text-align: center;
+  margin: 0 auto; /* centers horizontally */
   box-shadow: 0 4px 8px rgba(18, 33, 58, 0.2);
 }
 
@@ -41,4 +42,9 @@
 
 .contact-card button:hover {
   background-color: var(--clay-rust);
+}
+
+.error-text {
+  color: red;
+  font-size: 0.9rem;
 }
