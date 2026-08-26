@@ -7,13 +7,16 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <aside className="sidebar">
-        <h2>Admin Dashboard</h2>
+        <h2>Admin Panel</h2>
         <ul>
           <li>
             <NavLink to="team-admin">Manage Team</NavLink>
           </li>
           <li>
             <NavLink to="contact-submissions">Contact Submissions</NavLink>
+          </li>
+          <li>
+            <NavLink to="/">⬅ Back to Main Site</NavLink>
           </li>
         </ul>
       </aside>
