@@ -28,12 +28,19 @@ export function TeamProvider({ children }) {
     setTeamMembers(newMembers);
   };
 
+  const deleteMember = (index) => {
+    const newMembers = teamMembers.filter((_, i) => i !== index);
+    setTeamMembers(newMembers);
+  };
+
   useEffect(() => {
     localStorage.setItem("teamMembers", JSON.stringify(teamMembers));
   }, [teamMembers]);
 
   return (
-    <TeamContext.Provider value={{ teamMembers, addMember, updateMember }}>
+    <TeamContext.Provider
+      value={{ teamMembers, addMember, updateMember, deleteMember }}
+    >
       {children}
     </TeamContext.Provider>
   );
