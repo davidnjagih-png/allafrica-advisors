@@ -11,6 +11,11 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(18, 33, 58, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
 }
 
 .team-image {
@@ -32,8 +37,15 @@
 
 .team-info h3 {
   color: var(--ink-navy);
+  margin: 0.5rem 0;
 }
 
 .team-info h4 {
   color: var(--ochre-gold);
+  margin: 0.25rem 0;
+}
+
+.team-info p {
+  font-size: 0.9rem;
+  color: var(--ink-navy);
 }

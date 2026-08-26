@@ -1,5 +1,6 @@
 // src/components/TeamCard.jsx
 import React from "react";
+import "../styles/Team.css"; // shared styling for cards
 
 function TeamCard({ name, position, bio, photo }) {
   return (
