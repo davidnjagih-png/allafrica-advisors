@@ -1,8 +1,10 @@
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  justify-content: center; /* keeps grid centered */
+  margin-bottom: 4rem; /* spacing before footer */
 }
 
 .team-card {
@@ -12,6 +14,12 @@
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(18, 33, 58, 0.2);
   transition: transform 0.2s ease;
+  width: 100%; /* card fills its grid cell */
+  max-width: 350px; /* but never exceeds 350px */
+  margin: 0 auto; /* centers each card */
+  height: 420px; /* increased height */
+  display: flex;
+  flex-direction: column;
 }
 
 .team-card:hover {
@@ -20,7 +28,7 @@
 
 .team-image {
   width: 100%;
-  height: 200px;
+  height: 220px; /* taller image section */
   overflow: hidden;
 }
 
@@ -33,6 +41,7 @@
 .team-info {
   padding: 1rem;
   text-align: center;
+  flex: 1; /* ensures info fills remaining space */
 }
 
 .team-info h3 {
