@@ -12,9 +12,8 @@ function ContactFormCard() {
   });
   const [error, setError] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -25,7 +24,7 @@ function ContactFormCard() {
       return;
     }
     setError("");
-    addSubmission(formData); // push into context
+    addSubmission(formData); // persists via context + localStorage
     setFormData({ name: "", email: "", message: "" });
     alert("Form submitted successfully!");
   };
