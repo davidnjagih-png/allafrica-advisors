@@ -1,0 +1,39 @@
+.contact-submissions {
+  padding: 2rem;
+}
+
+.contact-submissions h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--ink-navy);
+}
+
+.submission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.submission-card {
+  background-color: var(--parchment);
+  border: 1px solid var(--ink-navy);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(18, 33, 58, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.submission-card:hover {
+  transform: translateY(-5px);
+}
+
+.submission-card h3 {
+  margin: 0 0 0.5rem;
+  color: var(--ochre-gold);
+}
+
+.submission-card p {
+  margin: 0.5rem 0;
+  color: var(--ink-navy);
+  font-size: 0.95rem;
+}

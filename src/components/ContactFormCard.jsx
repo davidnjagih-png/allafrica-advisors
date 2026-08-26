@@ -1,37 +1,64 @@
 // src/components/ContactFormCard.jsx
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { SubmissionsContext } from "./SubmissionsContext";
 import "../styles/ContactFormCard.css";
 
 function ContactFormCard() {
-  const [email, setEmail] = useState("");
+  const { addSubmission } = useContext(SubmissionsContext);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [error, setError] = useState("");
 
-  const validateEmail = (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!regex.test(email)) {
+    if (!validateEmail(formData.email)) {
       setError("Please enter a valid email address.");
-    } else {
-      setError("");
-      alert("Form submitted successfully!");
-      // Here you could add backend integration
+      return;
     }
+    setError("");
+    addSubmission(formData); // push into context
+    setFormData({ name: "", email: "", message: "" });
+    alert("Form submitted successfully!");
   };
 
   return (
     <div className="contact-card">
       <h3>Send Us a Message</h3>
-      <form onSubmit={validateEmail}>
-        <input type="text" placeholder="Your Name" required />
+      <form onSubmit={handleSubmit}>
         <input
+          name="name"
+          type="text"
+          placeholder="Your Name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          name="email"
           type="email"
           placeholder="Your Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={formData.email}
+          onChange={handleChange}
           required
         />
         {error && <p className="error-text">{error}</p>}
-        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          rows="5"
+          value={formData.message}
+          onChange={handleChange}
+          required
+        ></textarea>
         <button type="submit">Submit</button>
       </form>
     </div>

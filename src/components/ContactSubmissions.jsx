@@ -1,42 +1,31 @@
 // src/components/ContactSubmissions.jsx
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { SubmissionsContext } from "./SubmissionsContext";
 import "../styles/ContactSubmissions.css";
 
 function ContactSubmissions() {
-  const [submissions, setSubmissions] = useState([
-    {
-      name: "John Doe",
-      email: "john@example.com",
-      message: "Interested in advisory services.",
-    },
-    {
-      name: "Jane Smith",
-      email: "jane@example.com",
-      message: "Looking for market intelligence.",
-    },
-  ]);
+  const { submissions } = useContext(SubmissionsContext);
 
   return (
     <div className="contact-submissions">
       <h2>Contact Form Submissions</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Message</th>
-          </tr>
-        </thead>
-        <tbody>
-          {submissions.map((s, i) => (
-            <tr key={i}>
-              <td>{s.name}</td>
-              <td>{s.email}</td>
-              <td>{s.message}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="submission-grid">
+        {submissions.length === 0 ? (
+          <p>No submissions yet.</p>
+        ) : (
+          submissions.map((s, i) => (
+            <div key={i} className="submission-card">
+              <h3>{s.name}</h3>
+              <p>
+                <strong>Email:</strong> {s.email}
+              </p>
+              <p>
+                <strong>Message:</strong> {s.message}
+              </p>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 }
