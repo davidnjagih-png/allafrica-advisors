@@ -1,6 +1,6 @@
 // src/components/TeamAdmin.jsx
 import React, { useContext } from "react";
-import { TeamContext } from "./TeamContext";
+import { TeamContext } from "../context/TeamContext";
 import "../styles/TeamAdmin.css";
 
 function TeamAdmin() {

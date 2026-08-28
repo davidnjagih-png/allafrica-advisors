@@ -1,6 +1,6 @@
 // src/pages/Team.jsx
 import React, { useContext } from "react";
-import { TeamContext } from "../components/TeamContext";
+import { TeamContext } from "../context/TeamContext";
 import TeamCard from "../components/TeamCard";
 import "../styles/Team.css";
 

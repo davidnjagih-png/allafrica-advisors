@@ -1,6 +1,6 @@
 // src/components/ContactSubmissions.jsx
 import React, { useContext } from "react";
-import { SubmissionsContext } from "./SubmissionsContext";
+import { SubmissionsContext } from "../context/SubmissionsContext";
 import "../styles/ContactSubmissions.css";
 
 function ContactSubmissions() {

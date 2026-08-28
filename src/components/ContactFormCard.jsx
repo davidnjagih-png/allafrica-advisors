@@ -1,6 +1,6 @@
 // src/components/ContactFormCard.jsx
 import React, { useState, useContext } from "react";
-import { SubmissionsContext } from "./SubmissionsContext";
+import { SubmissionsContext } from "../context/SubmissionsContext";
 import "../styles/ContactFormCard.css";
 
 function ContactFormCard() {

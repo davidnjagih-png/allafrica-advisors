@@ -15,8 +15,8 @@ import SectorsRegions from "./pages/SectorsRegions";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 
-import { TeamProvider } from "./components/TeamContext";
-import { SubmissionsProvider } from "./components/SubmissionsContext";
+import { TeamProvider } from "./context/TeamContext";
+import { SubmissionsProvider } from "./context/SubmissionsContext";
 import "./index.css";
 
 function App() {
