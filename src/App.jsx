@@ -1,4 +1,3 @@
-// src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -6,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Dashboard from "./pages/Dashboard";
 import TeamAdmin from "./components/TeamAdmin";
+import ServicesAdmin from "./components/ServicesAdmin";
 import ContactSubmissions from "./components/ContactSubmissions";
 
 import Home from "./pages/Home";
@@ -16,36 +16,41 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 
 import { TeamProvider } from "./context/TeamContext";
+import { ServicesProvider } from "./context/ServicesContext";
 import { SubmissionsProvider } from "./context/SubmissionsContext";
+
 import "./index.css";
 
 function App() {
   return (
     <TeamProvider>
-      <SubmissionsProvider>
-        <Router>
-          <Navbar />
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/sectors" element={<SectorsRegions />} />
-              <Route path="/team" element={<Team />} />
-              <Route path="/contact" element={<Contact />} />
+      <ServicesProvider>
+        <SubmissionsProvider>
+          <Router>
+            <Navbar />
+            <main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/sectors" element={<SectorsRegions />} />
+                <Route path="/team" element={<Team />} />
+                <Route path="/contact" element={<Contact />} />
 
-              <Route path="/dashboard" element={<Dashboard />}>
-                <Route path="team-admin" element={<TeamAdmin />} />
-                <Route
-                  path="contact-submissions"
-                  element={<ContactSubmissions />}
-                />
-              </Route>
-            </Routes>
-          </main>
-          <Footer />
-        </Router>
-      </SubmissionsProvider>
+                <Route path="/dashboard" element={<Dashboard />}>
+                  <Route path="team-admin" element={<TeamAdmin />} />
+                  <Route path="services-admin" element={<ServicesAdmin />} />
+                  <Route
+                    path="contact-submissions"
+                    element={<ContactSubmissions />}
+                  />
+                </Route>
+              </Routes>
+            </main>
+            <Footer />
+          </Router>
+        </SubmissionsProvider>
+      </ServicesProvider>
     </TeamProvider>
   );
 }

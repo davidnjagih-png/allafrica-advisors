@@ -1,4 +1,3 @@
-// src/pages/Dashboard.jsx
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import "../styles/Dashboard.css";
@@ -11,6 +10,9 @@ function Dashboard() {
         <ul>
           <li>
             <NavLink to="team-admin">Manage Team</NavLink>
+          </li>
+          <li>
+            <NavLink to="services-admin">Manage Services</NavLink>
           </li>
           <li>
             <NavLink to="contact-submissions">Contact Submissions</NavLink>
