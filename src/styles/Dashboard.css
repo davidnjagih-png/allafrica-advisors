@@ -4,16 +4,14 @@
 }
 
 .sidebar {
-  width: 240px;
-  background-color: var(--ink-navy);
+  width: 220px;
+  background: var(--ink-navy);
   color: white;
   padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
 }
 
 .sidebar h2 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-size: 1.2rem;
   color: var(--ochre-gold);
 }
@@ -21,27 +19,26 @@
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin: 0;
-  flex: 1;
 }
 
 .sidebar li {
-  margin: 0.75rem 0;
+  margin-bottom: 1rem;
 }
 
 .sidebar a {
   color: white;
   text-decoration: none;
-  font-size: 1rem;
+  font-weight: 500;
   transition: color 0.2s ease;
 }
 
-.sidebar a:hover {
+.sidebar a:hover,
+.sidebar a.active {
   color: var(--ochre-gold);
 }
 
 .dashboard-content {
   flex: 1;
   padding: 2rem;
-  background-color: var(--parchment);
+  background: #f9f9f9;
 }

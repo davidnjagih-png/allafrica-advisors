@@ -15,6 +15,12 @@ function Dashboard() {
             <NavLink to="services-admin">Manage Services</NavLink>
           </li>
           <li>
+            <NavLink to="sectors-admin">Manage Sectors</NavLink>
+          </li>
+          <li>
+            <NavLink to="regions-admin">Manage Regions</NavLink>
+          </li>
+          <li>
             <NavLink to="contact-submissions">Contact Submissions</NavLink>
           </li>
           <li>
