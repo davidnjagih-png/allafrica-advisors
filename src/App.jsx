@@ -3,13 +3,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
+// Dashboard + Admin tools
 import Dashboard from "./pages/Dashboard";
 import TeamAdmin from "./components/TeamAdmin";
 import ServicesAdmin from "./components/ServicesAdmin";
 import ContactSubmissions from "./components/ContactSubmissions";
 import SectorsRegionsAdmin from "./components/SectorsRegionsAdmin";
 import RegionsAdmin from "./components/RegionsAdmin";
+import UsersAdmin from "./components/UsersAdmin"; // NEW
 
+// Public pages
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -17,6 +21,12 @@ import SectorsRegions from "./pages/SectorsRegions";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 
+// Auth components
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import WaitingAuthorization from "./components/WaitingAuthorization";
+
+// Context providers
 import { TeamProvider } from "./context/TeamContext";
 import { ServicesProvider } from "./context/ServicesContext";
 import { SubmissionsProvider } from "./context/SubmissionsContext";
@@ -44,6 +54,14 @@ function App() {
                     <Route path="/team" element={<Team />} />
                     <Route path="/contact" element={<Contact />} />
 
+                    {/* Auth Pages */}
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route
+                      path="/waiting-authorization"
+                      element={<WaitingAuthorization />}
+                    />
+
                     {/* Dashboard Admin Routes */}
                     <Route path="/dashboard" element={<Dashboard />}>
                       <Route path="team-admin" element={<TeamAdmin />} />
@@ -60,6 +78,8 @@ function App() {
                         element={<SectorsRegionsAdmin />}
                       />
                       <Route path="regions-admin" element={<RegionsAdmin />} />
+                      <Route path="users-admin" element={<UsersAdmin />} />{" "}
+                      {/* NEW */}
                     </Route>
                   </Routes>
                 </main>

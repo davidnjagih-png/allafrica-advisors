@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { FaTachometerAlt, FaUserCircle } from "react-icons/fa"; // dashboard + user icons
+import { FaUserCircle } from "react-icons/fa"; // user icon
 import "../styles/Navbar.css";
 
 function Navbar() {
@@ -29,11 +29,6 @@ function Navbar() {
         </li>
         <li>
           <NavLink to="/contact">Contact</NavLink>
-        </li>
-        <li className="dashboard-link">
-          <NavLink to="/dashboard">
-            <FaTachometerAlt className="dashboard-icon" />
-          </NavLink>
         </li>
         <li className="user-link">
           <NavLink to="/login">

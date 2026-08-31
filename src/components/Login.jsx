@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import "../styles/Auth.css";
 
 function Login() {
@@ -48,6 +48,9 @@ function Login() {
         />
         <button type="submit">Login</button>
       </form>
+      <p>
+        Don't have an account? <NavLink to="/signup">Sign Up</NavLink>
+      </p>
     </div>
   );
 }
