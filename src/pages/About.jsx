@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { TeamContext } from "../context/TeamContext";
 import "../styles/About.css";
 
 function About() {
+  const { teamMembers } = useContext(TeamContext);
+  const [visibleTeam, setVisibleTeam] = useState([]);
+
+  // Function to pick 3 random team members
+  const pickRandomTeam = () => {
+    if (teamMembers.length <= 3) {
+      setVisibleTeam(teamMembers);
+      return;
+    }
+    const shuffled = [...teamMembers].sort(() => 0.5 - Math.random());
+    setVisibleTeam(shuffled.slice(0, 3));
+  };
+
+  useEffect(() => {
+    pickRandomTeam();
+    const interval = setInterval(() => {
+      pickRandomTeam();
+    }, 5000); // rotate every 5 seconds
+    return () => clearInterval(interval);
+  }, [teamMembers]);
+
   return (
     <div className="about-page">
       {/* Hero Section */}
@@ -45,37 +67,7 @@ function About() {
         </ul>
       </section>
 
-      {/* Timeline */}
-      <section className="about-timeline">
-        <h2>Our Journey</h2>
-        <div className="timeline">
-          <div className="timeline-item">
-            <span className="year">2020</span>
-            <p>
-              Founded with a vision to transform advisory services in Africa.
-            </p>
-          </div>
-          <div className="timeline-item">
-            <span className="year">2022</span>
-            <p>Expanded into regional policy advisory and sector insights.</p>
-          </div>
-          <div className="timeline-item">
-            <span className="year">2024</span>
-            <p>
-              Launched digital dashboards for client engagement and reporting.
-            </p>
-          </div>
-          <div className="timeline-item">
-            <span className="year">2026</span>
-            <p>
-              Recognized as a trusted partner for governments and businesses
-              across Africa.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Spotlight */}
+      {/* Dynamic Team Spotlight */}
       <section className="about-team">
         <h2>Our Team</h2>
         <p>
@@ -84,21 +76,14 @@ function About() {
           deliver tailored solutions that meet the unique needs of our clients.
         </p>
         <div className="team-cards">
-          <div className="team-card">
-            <img src="/assets/team1.jpg" alt="Consultant" />
-            <h3>Jane Doe</h3>
-            <p>Policy Advisor</p>
-          </div>
-          <div className="team-card">
-            <img src="/assets/team2.jpg" alt="Consultant" />
-            <h3>John Smith</h3>
-            <p>Economic Strategist</p>
-          </div>
-          <div className="team-card">
-            <img src="/assets/team3.jpg" alt="Consultant" />
-            <h3>Mary Johnson</h3>
-            <p>Technology Specialist</p>
-          </div>
+          {visibleTeam.map((member, i) => (
+            <div key={i} className="team-card">
+              <img src={member.photo} alt={member.name} />
+              <h3>{member.name}</h3>
+              <p>{member.position}</p>
+              <p className="bio">{member.bio}</p>
+            </div>
+          ))}
         </div>
       </section>
     </div>
