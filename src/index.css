@@ -5,19 +5,39 @@
   --clay-rust: #8c3b22;
 }
 
-body {
+/* Reset & base styles */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
   background-color: var(--parchment);
   color: var(--ink-navy);
+  display: flex;
+  flex-direction: column;
 }
 
+/* Main content grows to push footer down */
+main {
+  flex: 1;
+  /* no margin-top or bottom here — spacing handled by page sections */
+}
+
+/* Navbar */
 .navbar {
   background-color: var(--ink-navy);
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  height: 60px;
+  padding: 2rem; /* increased height via padding */
 }
 
 .navbar ul {
@@ -35,9 +55,25 @@ body {
   border-bottom: 2px solid var(--ochre-gold);
 }
 
+/* Footer pinned at bottom */
 .footer {
   background-color: var(--ink-navy);
   color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem; /* increased height via padding */
+  margin-top: auto; /* ensures footer sits at bottom */
+}
+
+/* Page wrapper */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Headings */
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--ink-navy);
 }
