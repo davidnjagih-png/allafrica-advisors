@@ -1,12 +1,14 @@
+/* Team grid layout */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
-  justify-content: center; /* keeps grid centered */
   margin-bottom: 4rem; /* spacing before footer */
+  justify-content: center;
 }
 
+/* Team card container */
 .team-card {
   background-color: var(--parchment);
   border: 1px solid var(--ink-navy);
@@ -14,10 +16,9 @@
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(18, 33, 58, 0.2);
   transition: transform 0.2s ease;
-  width: 100%; /* card fills its grid cell */
-  max-width: 350px; /* but never exceeds 350px */
-  margin: 0 auto; /* centers each card */
-  height: 420px; /* increased height */
+  max-width: 320px;
+  margin: 0 auto;
+  height: 420px; /* overall card height */
   display: flex;
   flex-direction: column;
 }
@@ -26,35 +27,40 @@
   transform: translateY(-5px);
 }
 
+/* Image fills top portion */
 .team-image {
+  flex: 1; /* take up most of the card */
   width: 100%;
-  height: 220px; /* taller image section */
   overflow: hidden;
 }
 
 .team-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* ensures all image types fit properly */
 }
 
+/* Description anchored at bottom */
 .team-info {
-  padding: 1rem;
+  padding: 0.75rem;
   text-align: center;
-  flex: 1; /* ensures info fills remaining space */
+  background: var(--parchment);
 }
 
 .team-info h3 {
   color: var(--ink-navy);
-  margin: 0.5rem 0;
+  margin: 0.4rem 0;
+  font-size: 1.1rem;
 }
 
 .team-info h4 {
   color: var(--ochre-gold);
   margin: 0.25rem 0;
+  font-size: 0.95rem;
 }
 
 .team-info p {
-  font-size: 0.9rem;
+  font-size: 0.8rem; /* reduced size */
   color: var(--ink-navy);
+  line-height: 1.3;
 }
