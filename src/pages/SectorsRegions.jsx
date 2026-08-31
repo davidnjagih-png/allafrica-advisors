@@ -8,7 +8,7 @@ function SectorsRegions() {
   const { regions } = useContext(RegionsContext);
   const [activeRegion, setActiveRegion] = useState(regions[0]?.name || "");
 
-  // Auto-scroll through regions every 5 seconds
+  // Auto-scroll through regions every 10 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       if (regions.length > 0) {
@@ -16,7 +16,7 @@ function SectorsRegions() {
         const nextIndex = (currentIndex + 1) % regions.length;
         setActiveRegion(regions[nextIndex].name);
       }
-    }, 5000);
+    }, 10000); // changed from 3000 → 10000 (10 seconds)
     return () => clearInterval(interval);
   }, [activeRegion, regions]);
 
@@ -51,17 +51,19 @@ function SectorsRegions() {
         ))}
       </nav>
 
-      <div className="region-card">
-        {regions
-          .filter((r) => r.name === activeRegion)
-          .map((r, i) => (
-            <div key={i}>
-              <img src={r.image} alt={r.name} className="region-image" />
+      {regions
+        .filter((r) => r.name === activeRegion)
+        .map((r, i) => (
+          <div key={i} className="region-card">
+            <div className="region-text">
               <h3>{r.name}</h3>
               <p>{r.description}</p>
             </div>
-          ))}
-      </div>
+            <div className="region-image-wrapper">
+              <img src={r.image} alt={r.name} className="region-image" />
+            </div>
+          </div>
+        ))}
     </section>
   );
 }

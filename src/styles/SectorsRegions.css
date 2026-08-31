@@ -4,18 +4,14 @@
   color: var(--ink-navy);
 }
 
-/* Grid layout for sectors */
+/* Sectors grid */
 .sr-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  ); /* responsive grid */
-  gap: 2rem; /* spacing between cards */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
   margin-bottom: 3rem;
 }
 
-/* Individual sector card */
 .sr-card {
   background-color: var(--parchment);
   border: 1px solid var(--ink-navy);
@@ -24,10 +20,10 @@
   box-shadow: 0 4px 6px rgba(18, 33, 58, 0.2);
   transition: transform 0.2s ease;
 
-  width: 100%; /* card fills its grid cell */
-  max-width: 250px; /* compact size */
-  margin: 0 auto; /* centers each card */
-  height: 300px; /* fixed height for consistency */
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -35,7 +31,7 @@
 }
 
 .sr-card:hover {
-  transform: translateY(-4px); /* subtle lift on hover */
+  transform: translateY(-4px);
 }
 
 .sr-image {
@@ -57,7 +53,7 @@
   flex-grow: 1;
 }
 
-/* Regions navbar + card */
+/* Regions navbar */
 .regions-navbar {
   display: flex;
   justify-content: center;
@@ -79,21 +75,62 @@
   color: white;
 }
 
+/* Regions card with equal columns */
 .region-card {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* equal columns */
+  align-items: stretch;
   background: #fff;
   border: 1px solid #eee;
   border-radius: 10px;
   padding: 2rem;
-  max-width: 600px;
+  max-width: 1000px;
+  height: 400px; /* taller card */
   margin: 0 auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(18, 33, 58, 0.2);
+  gap: 2rem;
+  animation: slideInRight 0.6s ease;
+}
+
+.region-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.region-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  color: var(--ink-navy);
+}
+
+.region-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Right column image fills entire column */
+.region-image-wrapper {
+  width: 100%;
+  height: 100%;
 }
 
 .region-image {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 1rem;
+}
+
+/* Slide-in animation */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
