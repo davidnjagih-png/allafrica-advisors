@@ -1,0 +1,70 @@
+.users-admin {
+  padding: 2rem;
+}
+
+.user-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.user-card {
+  background: var(--parchment);
+  border: 1px solid var(--ink-navy);
+  border-radius: 8px;
+  padding: 1rem;
+  width: 250px;
+  box-shadow: 0 4px 6px rgba(18, 33, 58, 0.2);
+}
+
+.user-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--ink-navy);
+}
+
+.user-card p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.card-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.approve-btn {
+  background: var(--ochre-gold);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.approve-btn:hover {
+  background: var(--clay-rust);
+}
+
+.delete-btn {
+  background: #b22222;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #8b0000;
+}
+
+.admin-card {
+  background: #e6f7ff;
+  border: 2px solid var(--ochre-gold);
+}
+
+.admin-card .note {
+  font-size: 0.8rem;
+  color: #555;
+}
