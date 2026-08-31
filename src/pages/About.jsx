@@ -6,8 +6,8 @@ function About() {
   const { teamMembers } = useContext(TeamContext);
   const [visibleTeam, setVisibleTeam] = useState([]);
 
-  // Function to pick 3 random team members
   const pickRandomTeam = () => {
+    if (!teamMembers || teamMembers.length === 0) return;
     if (teamMembers.length <= 3) {
       setVisibleTeam(teamMembers);
       return;
@@ -20,7 +20,7 @@ function About() {
     pickRandomTeam();
     const interval = setInterval(() => {
       pickRandomTeam();
-    }, 5000); // rotate every 5 seconds
+    }, 5000);
     return () => clearInterval(interval);
   }, [teamMembers]);
 
@@ -67,7 +67,37 @@ function About() {
         </ul>
       </section>
 
-      {/* Dynamic Team Spotlight */}
+      {/* Timeline */}
+      <section className="about-timeline">
+        <h2>Our Journey</h2>
+        <div className="timeline">
+          <div className="timeline-item">
+            <span className="year">2020</span>
+            <p>
+              Founded with a vision to transform advisory services in Africa.
+            </p>
+          </div>
+          <div className="timeline-item">
+            <span className="year">2022</span>
+            <p>Expanded into regional policy advisory and sector insights.</p>
+          </div>
+          <div className="timeline-item">
+            <span className="year">2024</span>
+            <p>
+              Launched digital dashboards for client engagement and reporting.
+            </p>
+          </div>
+          <div className="timeline-item">
+            <span className="year">2026</span>
+            <p>
+              Recognized as a trusted partner for governments and businesses
+              across Africa.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Spotlight */}
       <section className="about-team">
         <h2>Our Team</h2>
         <p>
@@ -75,12 +105,12 @@ function About() {
           business strategy, policy analysis, and technology. Together, we
           deliver tailored solutions that meet the unique needs of our clients.
         </p>
-        <div className="team-cards">
+        <div className="about-team-cards">
           {visibleTeam.map((member, i) => (
-            <div key={i} className="team-card">
+            <div key={i} className="about-team-card">
               <img src={member.photo} alt={member.name} />
               <h3>{member.name}</h3>
-              <p>{member.position}</p>
+              <p className="position">{member.position}</p>
               <p className="bio">{member.bio}</p>
             </div>
           ))}
