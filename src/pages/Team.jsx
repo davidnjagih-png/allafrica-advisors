@@ -9,7 +9,7 @@ function Team() {
 
   return (
     <section className="page">
-      <h2>Leadership</h2>
+      <h2 className="title">Our WorkForce</h2>
       <div className="team-grid">
         {teamMembers.map((member, index) => (
           <TeamCard key={index} {...member} />
