@@ -1,14 +1,181 @@
-.hero {
-  text-align: center;
-  padding: 4rem 2rem;
-  background-color: var(--ink-navy);
-  color: white;
+.home-page {
+  font-family: Arial, sans-serif;
+  color: var(--ink-navy);
 }
 
-.hero button {
-  background-color: var(--ochre-gold);
-  border: none;
-  padding: 0.75rem 1.5rem;
+/* Hero Section */
+.hero {
+  background:
+    linear-gradient(rgba(18, 33, 58, 0.7), rgba(18, 33, 58, 0.7)),
+    url("https://content.pexels.com/aigc-bundle/videos/1ba79437-ab04-4d7b-8968-073f412b3fa6.mp4")
+      center/cover no-repeat;
   color: white;
-  cursor: pointer;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--ochre-gold);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  background: var(--ochre-gold);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: var(--clay-rust);
+}
+
+/* Services Preview */
+.services-preview {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.services-preview h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.service-card {
+  background: var(--parchment);
+  border: 1px solid var(--ink-navy);
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 280px;
+  box-shadow: 0 4px 6px rgba(18, 33, 58, 0.2);
+}
+
+.service-card h3 {
+  color: var(--ochre-gold);
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.service-card a {
+  color: var(--ink-navy);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.service-card a:hover {
+  color: var(--clay-rust);
+}
+
+/* Insights Section */
+.insights-section {
+  background: #f9f9f9;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.insight-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.insight-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 280px;
+  box-shadow: 0 2px 4px rgba(18, 33, 58, 0.1);
+}
+
+.insight-card h3 {
+  color: var(--ink-navy);
+  margin-bottom: 0.5rem;
+}
+
+.insight-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.insight-card a {
+  color: var(--ochre-gold);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.insight-card a:hover {
+  color: var(--clay-rust);
+}
+
+/* CTA Section */
+.cta-section {
+  background: var(--ink-navy);
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.service-cards {
+  display: flex;
+  flex-direction: row; /* force horizontal layout */
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: nowrap; /* prevent wrapping to multiple rows */
+  overflow-x: auto; /* allow horizontal scroll if more than 4 cards */
+}
+
+.service-card {
+  flex: 0 0 22%; /* each card takes ~1/4 of row */
+  background: var(--parchment);
+  border: 1px solid var(--ink-navy);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(18, 33, 58, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
 }
