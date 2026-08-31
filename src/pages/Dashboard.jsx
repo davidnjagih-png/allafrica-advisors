@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/Dashboard.css";
 
 function Dashboard() {
@@ -28,8 +28,30 @@ function Dashboard() {
           </li>
         </ul>
       </aside>
+
+      {/* Landing page content */}
       <main className="dashboard-content">
-        <Outlet />
+        <div className="admin-landing">
+          <h1>Welcome to the Admin Panel</h1>
+          <p>Select a section below to manage content:</p>
+          <div className="admin-buttons">
+            <NavLink to="team-admin" className="admin-btn">
+              Manage Team
+            </NavLink>
+            <NavLink to="services-admin" className="admin-btn">
+              Manage Services
+            </NavLink>
+            <NavLink to="sectors-admin" className="admin-btn">
+              Manage Sectors
+            </NavLink>
+            <NavLink to="regions-admin" className="admin-btn">
+              Manage Regions
+            </NavLink>
+            <NavLink to="contact-submissions" className="admin-btn">
+              Contact Submissions
+            </NavLink>
+          </div>
+        </div>
       </main>
     </div>
   );

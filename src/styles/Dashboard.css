@@ -42,3 +42,42 @@
   padding: 2rem;
   background: #f9f9f9;
 }
+
+/* Landing page styling */
+.admin-landing {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.admin-landing h1 {
+  font-size: 2rem;
+  color: var(--ink-navy);
+  margin-bottom: 1rem;
+}
+
+.admin-landing p {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.admin-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.admin-btn {
+  background: var(--ochre-gold);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.admin-btn:hover {
+  background: var(--clay-rust);
+}

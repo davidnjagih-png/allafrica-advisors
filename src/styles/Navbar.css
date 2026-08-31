@@ -50,3 +50,18 @@
   font-size: 1.2rem;
   color: var(--ochre-gold);
 }
+
+.user-link a {
+  display: flex;
+  align-items: center;
+}
+
+.user-icon {
+  font-size: 1.4rem;
+  color: var(--ochre-gold);
+  transition: color 0.2s ease;
+}
+
+.user-icon:hover {
+  color: var(--clay-rust);
+}
