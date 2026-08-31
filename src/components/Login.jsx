@@ -16,8 +16,10 @@ function Login() {
       return;
     }
 
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (user && user.username === username && user.password === password) {
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const user = users.find((u) => u.email === username || u.name === username);
+
+    if (user && user.password === password) {
       if (user.authorized) {
         navigate("/dashboard");
       } else {
@@ -34,7 +36,7 @@ function Login() {
       <form onSubmit={handleLogin}>
         <input
           type="text"
-          placeholder="Username"
+          placeholder="Email or Name"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
